@@ -1,0 +1,14 @@
+<header class="page_header">
+    <div class="page-header_blog-title">{{.Site.Data.data.title}}</div>
+    <nav class="page-header_main-nav">
+        <ul>
+            {{ range .Site.Menus.main }}
+            <li>
+                <a href="{{.URL}}"> {{lower .Name}} </a>
+            </li>
+            {{end}}
+        </ul>
+    </nav>
+
+    <div class="page-header_background-image" style="background-image: url({{.Site.Data.data.image}});"></div>
+</header>

@@ -1,0 +1,21 @@
+{{define "main"}}
+<!-- BLOG/LIST TEMPLATE FOR LIST OF ALL POSTS:  calls abbeviated previews for list of all posts -->
+
+{{ $posts := where .Pages ".Params.type" "post"}}
+{{ $postNumber := len $posts}}
+{{ $previewQuantity := .Site.Data.data.preview }}
+
+<h1 class="intro-text_list-pages total-posts">{{$postNumber}} posts total</h1>
+
+<!-- Paginator is visible on list page after clicking "more posts" in side nav -->
+{{ $paginator := .Paginate (where .Pages "Params.type" "post") $previewQuantity }}
+{{ if gt $postNumber $previewQuantity}}
+<nav class="paginator">{{ template "_internal/pagination.html" . }}
+<p class="paginator_info">Click arrows and page numbers to see listings of {{$previewQuantity}} posts per page from newest <span class="text_italic">(left)</span> to oldest <span class="text_italic">(right)</span>.</p></nav>
+{{end}}
+
+{{ range $paginator.Pages }}
+    {{ partial "post-preview_abbrev" . }}
+{{end}}
+
+{{end}}

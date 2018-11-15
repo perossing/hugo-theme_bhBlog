@@ -1,0 +1,10 @@
+<div class="tag-container">
+    {{ if .Params.tags}}
+        {{ range .Params.tags}}
+        <div class="tag-capsule">
+            <a href="{{ "tags/" | relLangURL }}{{ . | urlize | lower }}" title="{{ . | humanize }}">{{ . | humanize }}</a>
+        </div>                
+        {{end}}
+    {{ end }}
+    
+</div>

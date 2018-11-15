@@ -1,0 +1,28 @@
+{{define "main"}}
+
+
+  <section>
+
+    <ul>
+      {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+      <li>
+        <a style="background: red; color:white; text-transform: uppercase; font-size: 18px;" href="{{ " / " | relLangURL}}{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a>
+        <ul>
+          {{ range $key, $value := $taxonomy }}
+          <li style="background: yellow; font-size: 16px;"> {{ $key }} </li>
+          <ul>
+            {{ range $value.Pages }}
+            <li style="background: lightgray; font-weight: 200; font-size: 16px;">
+              <a href="{{ .Permalink}}"> {{ .LinkTitle }} </a>
+            </li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </ul>
+      </li>
+      {{ end }}
+    </ul>
+
+  </section>
+
+{{end}}

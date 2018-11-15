@@ -1,0 +1,42 @@
+{{ $posts := where .Pages ".Params.type" "post"}}
+{{ $postNumber := len $posts}}
+{{ $previewQuantity := .Site.Data.data.preview }}
+
+<nav class="side-nav">
+    <section>
+        <h2 class="side-nav_section_heading">recent posts</h2>
+        <div class="side-nav_line"></div>
+        <ul>
+            {{range where .Site.RegularPages "Params.type" "post" | first $previewQuantity }}
+                <li class="side-nav_posts">
+                    <a class="side-nav_link_post" href="{{.URL}}">{{.Title}}</a>
+                </li>
+            {{end}}
+        </ul>
+        {{ if gt $postNumber $previewQuantity}}
+
+        <a href="/posts/" class="side-nav_link_more-posts">more posts</a>
+        {{ end }}
+    </section>
+    <section>
+        <h2 class="side-nav_section_heading">categories</h2>
+        <div class="side-nav_line"></div>
+
+        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+        <div class="side-nav_categories"><a href="{{ "categories/" | relLangURL }}{{ $name | urlize }}">{{ $name |humanize}}</a> <span class="side-nav_count">({{.Count}})</span></div>
+        
+        {{end}}
+        
+    </section>
+    <section>
+        <h2 class="side-nav_section_heading">tags</h2>
+        <div class="side-nav_line"></div>
+        <div>
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                <div class="tag-capsule tag-capsule_side-nav">
+                    <a href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}" title="{{ $name | humanize }}">{{ $name | humanize }}</a>
+                </div>                
+            {{end}}
+        </div>
+    </section>
+</nav>

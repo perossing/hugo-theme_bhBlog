@@ -1,0 +1,9 @@
+ {{ $contentLength := len .Summary}}
+ {{ if gt $contentLength 149}}
+<section class="post-preview_copy">{{slicestr .Summary 0 150}}
+  <span class="ellipsis">. . .</span>
+</section>
+{{ else }}
+<section class="post-preview_copy">{{.Summary}}</section>
+{{ end }}
+<a href="{{.URL}}" class="post-preview_read-more">read more</a>

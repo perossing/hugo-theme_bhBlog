@@ -1,0 +1,11 @@
+<section class="post-preview">
+  <h1>
+    <a class="post-preview_title" href="{{.URL}}">{{.Title}}</a>
+  </h1>
+  <time class="date">{{ dateFormat "Monday, January 2, 2006" .Date }}</time>
+
+  <div class="no-category">
+    {{ partial "tags-bar" . }}
+  </div>
+  {{ partial "preview_summary" . }}
+</section>

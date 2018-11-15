@@ -1,0 +1,10 @@
+{{define "main"}}
+<!-- HOME PAGE LIST TEMPLATE -->
+<h1 class="intro-text_home-page">{{.Site.Data.data.intro}}</h1>
+
+{{range where .Pages "Params.type" "post"}}
+    {{ partial "post-preview" . }}
+{{end}}
+
+
+{{end}}

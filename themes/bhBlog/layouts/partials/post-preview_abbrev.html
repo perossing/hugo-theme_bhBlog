@@ -1,0 +1,10 @@
+<section class="post-preview">
+  <h1>
+    <a class="post-preview_title" href="{{.URL}}">{{.Title}}</a>
+  </h1>
+  <time class="date">{{ dateFormat "Monday, January 2, 2006" .Date }}</time>
+
+  <a class="post_category" href="{{ "categories/" | relLangURL }}{{ .Params.categories | urlize | lower }}">{{ .Params.categories }}</a>
+  {{ partial "tags-bar" . }}
+  {{ partial "preview_summary" . }}
+</section>

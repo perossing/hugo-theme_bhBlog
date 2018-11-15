@@ -1,0 +1,26 @@
+{{define "main"}}
+
+    <article class="post">
+        <h1 class="post_title">{{.Title}}</h1>
+        {{ if .Params.Date }}
+        <time class="date">{{ dateFormat "Monday, January 2, 2006" .Date }}</time>
+        {{end}}
+        
+        {{ $name := .Params.categories }}
+        <a class="post_category" href="{{ "categories/" | relLangURL }}{{ lower $name | urlize }}">{{.Params.categories}}</a>
+
+        {{ partial "tags-bar" . }}
+
+        {{ if .Params.picture}}
+        <figure>
+            <img src={{.Params.picture}} alt="{{.Params.caption}}">
+            <figcaption>{{.Params.caption}}</figcaption>
+        </figure>
+        {{end}}
+        <section class="post_copy">{{.Content}}</section>
+
+    </article>
+    {{ if or .PrevInSection .NextInSection}}
+    {{ partial "post_nav" . }}
+    {{ end }}
+{{end}}

@@ -1,0 +1,18 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Blog _ BH-theme"
+theme = "bhBlog"
+
+[[menu.main]]
+    name = "Home"
+    url  = "/"
+    weight = 1
+
+[taxonomies]
+   tag = "tags"
+   category = "categories"
+
+[Params]
+    picture = ""
+    caption = ""
+

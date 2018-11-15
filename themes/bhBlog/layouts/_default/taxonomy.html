@@ -1,0 +1,35 @@
+{{define "main"}}
+
+  {{$selectedTaxonomy := urlize .Title}}
+
+  {{ range $taxonomyType, $taxonomy := .Site.Taxonomies }}
+    {{ range $key, $value := $taxonomy }}
+      {{ if eq $selectedTaxonomy $key }}
+        <h1 class="intro-text_list-pages">{{.Count}}
+          {{ if eq .Count 1 }}
+            post
+          {{ else }}
+            posts
+          {{ end }}
+          
+          {{ if eq $taxonomyType "categories"}}
+            in the category: &nbsp<span class="post-list_taxonomy-name">{{ humanize $selectedTaxonomy}}</span>
+          </h1>
+          {{range .Pages}}
+            {{ partial "post-preview_abbrev_noCat" . }}
+          {{end}}
+          {{ end }}
+
+          {{ if eq $taxonomyType "tags"}}
+            with the tag: &nbsp<span class="post-list_taxonomy-name">{{ humanize $selectedTaxonomy }}</span>
+          </h1>
+          {{range .Pages}}
+            {{ partial "post-preview_abbrev" . }}
+          {{end}}
+          {{ end }}
+ 
+      {{end}}
+    {{end}}
+  {{end}}
+
+{{end}}

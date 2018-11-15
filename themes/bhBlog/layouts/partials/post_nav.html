@@ -1,0 +1,21 @@
+<nav class="post-nav">
+
+	<div class="post-nav__item">
+		{{- if .PrevInSection }}
+		<a class="post-nav__link" href="{{.PrevInSection.RelPermalink}}" rel="PrevInSection">
+			<span class="post-nav__arrow left-arrow">«&thinsp;</span>
+			<p class="post-nav__post-title">{{.PrevInSection.Title}}</p>
+		</a>
+		{{- end }}
+	</div>
+
+	<div class="post-nav__item">
+		{{- if .NextInSection }}
+		<a class="post-nav__link" href="{{.NextInSection.RelPermalink}}" rel="NextInSection">
+			<p class="post-nav__post-title">{{.NextInSection.Title}}</p>
+			<span class="post-nav__arrow right-arrow">&thinsp;»</span>
+		</a>
+		{{- end }}
+	</div>
+
+</nav>

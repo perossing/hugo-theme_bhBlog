@@ -1,0 +1,17 @@
+<section class="post-preview">
+    <h1><a class="post-preview_title" href="{{.URL}}">{{.Title}}</a></h1>
+    <time class="date">{{ dateFormat "Monday, January 2, 2006" .Date }}</time>
+    {{ if .Params.picture}}
+    <img class="thumbnail" src={{.Params.picture}}>
+    {{end}}
+
+    <section class="post-preview_copy">{{.Summary}}<span class="ellipsis">. . .</span></section>
+
+    <a href="{{.URL}}"class="post-preview_read-more">read more</a>
+    <div class="post-preview_line"></div>
+
+    <a class="post_category" href="{{ "categories/" | relLangURL }}{{ .Params.categories | urlize | lower}}">{{.Params.categories}}</a>
+
+    {{ partial "tags-bar" . }}
+
+</section>
