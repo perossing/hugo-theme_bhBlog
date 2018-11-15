@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500|Tinos:400,400i,700');
+
+html, body {
+    font-family: "Tinos", serif;
+    color: #111;
+    background: #fff;
+    padding: 15px;
+  }
+
+  body {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+  
+  h1 {
+    font-family: "Oswald", sans-serif;
+    color: #454042;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 1em 0 0.75em 0;
+  }
+
+  a {
+    color: #A9B37D;
+  }
+
+  img {
+    max-width: 95%;
+  }

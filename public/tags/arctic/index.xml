@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arctic on Blog _ BH-theme</title>
+    <link>http://example.org/tags/arctic/</link>
+    <description>Recent content in Arctic on Blog _ BH-theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/arctic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A New Post</title>
+      <link>http://example.org/posts/a-new-post/</link>
+      <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/a-new-post/</guid>
+      <description>Culpa aute veniam esse exercitation occaecat esse sunt exercitation non commodo proident duis dolore eiusmod. Minim do consequat officia consequat pariatur excepteur reprehenderit occaecat magna irure laboris laborum dolor. Occaecat sint sunt laboris sint veniam in do Lorem commodo ex nostrud labore adipisicing nostrud. Minim cupidatat adipisicing mollit do. Et deserunt id ad aliquip aliquip irure dolore laborum ullamco.
+Pariatur enim commodo cupidatat amet eiusmod officia nostrud dolor. Laboris proident do dolore consequat proident consectetur voluptate officia proident cupidatat magna.</description>
+    </item>
+    
+  </channel>
+</rss>
